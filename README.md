@@ -16,4 +16,4 @@ performDraw()-->用于绘制自己还有子view,对于GroupView先绘制自己�
 ## 源码调用规律总结：
 ### performMeasure（）-->measure（）-->onMeasure()
 ### performLayout（）-->layout（）-->onLayout()
-### performDraw（）-->draw-->onDraw()
+### performDraw（）-->draw（）-->onDraw()

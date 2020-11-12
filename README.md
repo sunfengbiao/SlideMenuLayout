@@ -19,12 +19,12 @@ performDraw()-->用于绘制自己还有子view,对于GroupView先绘制自己�
 ### performDraw（）-->draw（）-->onDraw()
 
 # View事件分发:(down move up)
- down:dispatchEventTounch()-->onTounchListener()-->onTounchEvent()
- move:dispatchEventTounch()-->onTounchListener()-->onTounchEvent()
- up:dispatchEventTounch()-->onTounchListener()-->onTounchEvent()-->onclick() (onclick事件在onTounchEvent的spuer.onTounchEvent的ACTION_UP分支里) 其中任一过程消耗该事件后（返回值为true），则事件终止传递
+### down:dispatchEventTounch()-->onTounchListener()-->onTounchEvent()
+### move:dispatchEventTounch()-->onTounchListener()-->onTounchEvent()
+### up:dispatchEventTounch()-->onTounchListener()-->onTounchEvent()-->onclick() (onclick事件在onTounchEvent的spuer.onTounchEvent的ACTION_UP分支里) 其中任一过程消耗该事件后（返回值为true），则事件终止传递
  
  # ViewGroup事件分发:(down move up)
- down: ViewGroup.dispatchTounchEvent()-->onInterceptTounchEvent()-->View.dispatchTounchEvent()-->View.onTounch()-->View.onTounchEvent()
- move: ViewGroup.dispatchTounchEvent()-->onInterceptTounchEvent()-->View.dispatchTounchEvent()-->View.onTounch()-->View.onTounchEvent()
- up: ViewGroup.dispatchTounchEvent()-->onInterceptTounchEvent()-->View.dispatchTounchEvent()-->View.onTounch()-->View.onTounchEvent()-onclck()
- 当onInterceptTounchEvent()返回值为true或者事件传递结束后仍然没有被消耗，则执行ViewGoup.onTounchEvent()
+ ### down: ViewGroup.dispatchTounchEvent()-->onInterceptTounchEvent()-->View.dispatchTounchEvent()-->View.onTounch()-->View.onTounchEvent()
+ ### move: ViewGroup.dispatchTounchEvent()-->onInterceptTounchEvent()-->View.dispatchTounchEvent()-->View.onTounch()-->View.onTounchEvent()
+ ### up: ViewGroup.dispatchTounchEvent()-->onInterceptTounchEvent()-->View.dispatchTounchEvent()-->View.onTounch()-->View.onTounchEvent()-onclck()
+当onInterceptTounchEvent()返回值为true或者事件传递结束后仍然没有被消耗，则执行ViewGoup.onTounchEvent()
